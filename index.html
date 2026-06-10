@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Eat out. Scan receipt. Get rewarded. BiteBack is the loyalty app that pays you back.">
+    <title>BiteBack</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <!-- Have to add icon later -->
+
+    <link href="./assets/fonts/inter-v20-latin-regular.woff2" type="font/woff2" rel="preload" as="font" crossorigin>
+    <link href="./assets/fonts/inter-v20-latin-600.woff2" type="font/woff2" rel="preload" as="font" crossorigin>
+    <link href="./assets/fonts/inter-v20-latin-600italic.woff2" type="font/woff2" rel="preload" as="font" crossorigin>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./app.js" defer></script>
+
+</head>
+
+<body>
+    <nav>
+        <img src="./assets/vectors/logo.svg" alt="Logo" class="logo" height="48px" width="48px">
+        <div class="nav-buttons container">
+            <img src="./assets/vectors/instagram.svg" id="instagram" class="social-button" alt="Instagram logo image"
+                width="25" height="25">
+            <a id="nav-cta-button" class="nav-buttons link-button">Jetzt runterladen</a>
+        </div>
+    </nav>
+    <main>
+        <div class="hero section">
+            <img src="./assets/images/hero_bg_image.webp" srcset="./assets/images/hero_bg_image_mobile.webp 800w, 
+                    ./assets/images/hero_bg_image.webp 2400w" sizes="100vw" id="hero-bg-img"
+                alt="Wolkiges Hintergrundbild" width="2400" height="1500" decoding="async">
+            <h1>Eat out.<br>Scan receipt.<br><span class="highlight">Get rewarded.</span></h1>
+            <div class="iphone container float">
+                <img src="./assets/images/iphone_mockup.webp" srcset="./assets/images/iphone_mockup_mobile_s.webp 400w, 
+                        ./assets/images/iphone_mockup_mobile_m.webp 700w,
+                        ./assets/images/iphone_mockup.webp 1040w" sizes="(max-width: 600px) 90vw, 320px"
+                    id="iphone-mockup" alt="BiteBack-App auf einem iPhone" width="320" height="661"
+                    fetchpriority="high">
+                <div class="background-gradient"></div>
+            </div>
+            <p class="app-description">The loyalty app that pays you back. Connect with your favorite local spots,
+                collect points instantly, and redeem exclusive rewards.</p>
+            <div class="download-buttons container">
+                <a id="app-store-download-button" class="link-button">
+                    <img src="./assets/vectors/app_store.svg" alt="App Store icon" width="50" height="50">
+                    <p>Download on<br>App Store</p>
+                </a>
+                <a id="google-play-download-button" class="link-button">
+                    <img src="./assets/vectors/google_play.svg" alt="Google Play Store icon" width="50" height="50">
+                    <p>Download on<br>Google Play</p>
+                </a>
+            </div>
+            <p class="b2b-desc">Du bist ein Restaurant und interessiert dich dafür in unserer App angezeigt zu
+                werden?<br>B2B →</p>
+        </div>
+        <div class="how-it-works section">
+            <div>
+                <h2>How it Works</h2>
+                <p>Three simple steps to turn your daily meals into exciting rewards.</p>
+            </div>
+            <div class="steps container">
+                <div class="step container">
+                    <img src="./assets/vectors/scan-line.svg" id="scan-line" alt="Scan line image" width="37.5"
+                        height="37.5">
+                    <div>
+                        <h3>Scan Receipt</h3>
+                        <p>Simply snap a photo of your bill from any partner restaurant using our smart camera.</p>
+                    </div>
+                </div>
+                <div class="step container">
+                    <img src="./assets/vectors/coins.svg" id="coins" alt="Coins image" width="37.5" height="37.5">
+                    <div>
+                        <h3>Earn Points</h3>
+                        <p>Points are automatically added to your wallet after verification.</p>
+                    </div>
+                </div>
+                <div class="step container">
+                    <img src="./assets/vectors/gift.svg" id="gift" alt="Gift image" width="37.5" height="37.5">
+                    <div>
+                        <h3>Redeem Rewards</h3>
+                        <p>Spend your points on free meals, drinks or exclusive discounts at any location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="our-mission section">
+            <h2>Our Mission</h2>
+            <div class="quote container">
+                <img src="./assets/vectors/quote.svg" id="quote" alt="Quote image" width="50" height="50">
+                <h3>"We believe that every meal should be shared and support a community."</h3>
+                <div class="avatar container s">
+                    <img class="avatar img" alt="Founder Profile Picture" width="40" height="40">
+                    <div>
+                        <h4>Philipp Schöller</h4>
+                        <p>Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meet section">
+            <h2>Meet the Founders</h2>
+            <div class="avatar container l">
+                <div class="persona container">
+                    <img class="avatar img" alt="Founder Profile Picture Large" width="250" height="300">
+                    <div>
+                        <h3>Georg Schättle</h3>
+                        <p>CEO & Founder</p>
+                    </div>
+                </div>
+                <div class="persona container">
+                    <img class="avatar img" alt="Founder Profile Picture Large" width="250" height="300">
+                    <div>
+                        <h3>Philipp Schöller</h3>
+                        <p>CEO & Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cta section">
+            <div class="cta container">
+                <div class="inner cta container">
+                    <h2 class="dark-text-shadow">Ready to start <span class="dark-text-shadow highlight">earning?</span>
+                    </h2>
+                    <a class="link-button">Download Now & Become a Member</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="left footer container">
+            <h3>BiteBack</h3>
+            <p class="copyright">© BiteBack Inc.</p>
+        </div>
+        <div class="right footer container">
+            <ul>
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+                <li>Support</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
