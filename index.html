@@ -22,89 +22,109 @@
 </head>
 
 <body>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" class="lang-btn" data-lang="de" aria-label="Deutsch">
+            <svg viewBox="0 0 9 6" width="26" height="18" aria-hidden="true">
+                <rect width="9" height="6" fill="#ED2939"/>
+                <rect y="2" width="9" height="2" fill="#fff"/>
+            </svg>
+        </button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">
+            <svg viewBox="0 0 60 30" width="30" height="18" aria-hidden="true">
+                <clipPath id="uk-s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+                <clipPath id="uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                <g clip-path="url(#uk-s)">
+                    <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/>
+                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                    <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+                </g>
+            </svg>
+        </button>
+    </div>
+
     <nav>
         <img src="./assets/vectors/logo.svg" alt="Logo" class="logo" height="48px" width="48px">
         <div class="nav-buttons container">
             <img src="./assets/vectors/instagram.svg" id="instagram" class="social-button" alt="Instagram logo image"
                 width="25" height="25">
-            <a id="nav-cta-button" class="nav-buttons link-button">Jetzt runterladen</a>
+            <a id="nav-cta-button" class="nav-buttons link-button" data-i18n="nav_cta">Jetzt herunterladen</a>
         </div>
     </nav>
     <main>
         <div class="hero section">
-            <img src="./assets/images/hero_bg_image.webp" srcset="./assets/images/hero_bg_image_mobile.webp 800w, 
+            <img src="./assets/images/hero_bg_image.webp" srcset="./assets/images/hero_bg_image_mobile.webp 800w,
                     ./assets/images/hero_bg_image.webp 2400w" sizes="100vw" id="hero-bg-img"
                 alt="Wolkiges Hintergrundbild" width="2400" height="1500" decoding="async">
-            <h1>Eat out.<br>Scan receipt.<br><span class="highlight">Get rewarded.</span></h1>
+            <h1 data-i18n="hero_title">Essen gehen.<br>Beleg scannen.<br><span class="highlight">Belohnt werden.</span></h1>
             <div class="iphone container float">
-                <img src="./assets/images/iphone_mockup.webp" srcset="./assets/images/iphone_mockup_mobile_s.webp 400w, 
+                <img src="./assets/images/iphone_mockup.webp" srcset="./assets/images/iphone_mockup_mobile_s.webp 400w,
                         ./assets/images/iphone_mockup_mobile_m.webp 700w,
                         ./assets/images/iphone_mockup.webp 1040w" sizes="(max-width: 600px) 90vw, 320px"
                     id="iphone-mockup" alt="BiteBack-App auf einem iPhone" width="320" height="661"
                     fetchpriority="high">
                 <div class="background-gradient"></div>
             </div>
-            <p class="app-description">The loyalty app that pays you back. Connect with your favorite local spots,
-                collect points instantly, and redeem exclusive rewards.</p>
+            <p class="app-description" data-i18n="hero_desc">Die Treue-App, die sich für dich auszahlt. Verbinde dich mit deinen Lieblingslokalen, sammle sofort Punkte und löse exklusive Rewards ein.</p>
             <div class="download-buttons container">
                 <a id="app-store-download-button" class="link-button">
                     <img src="./assets/vectors/app_store.svg" alt="App Store icon" width="50" height="50">
-                    <p>Download on<br>App Store</p>
+                    <p data-i18n="dl_appstore">Laden im<br>App Store</p>
                 </a>
                 <a id="google-play-download-button" class="link-button">
                     <img src="./assets/vectors/google_play.svg" alt="Google Play Store icon" width="50" height="50">
-                    <p>Download on<br>Google Play</p>
+                    <p data-i18n="dl_googleplay">Jetzt bei<br>Google Play</p>
                 </a>
             </div>
-            <p class="b2b-desc">Du bist ein Restaurant und interessiert dich dafür in unserer App angezeigt zu
-                werden?<br>B2B →</p>
+            <p class="b2b-desc" data-i18n="b2b">Du bist ein Restaurant und interessiert dich dafür in unserer App angezeigt zu werden?<br>B2B →</p>
         </div>
         <div class="how-it-works section">
             <div>
-                <h2>How it Works</h2>
-                <p>Three simple steps to turn your daily meals into exciting rewards.</p>
+                <h2 data-i18n="hiw_title">So funktioniert's</h2>
+                <p data-i18n="hiw_sub">Drei einfache Schritte, um deine täglichen Mahlzeiten in spannende Rewards zu verwandeln.</p>
             </div>
             <div class="steps container">
                 <div class="step container">
                     <img src="./assets/vectors/scan-line.svg" id="scan-line" alt="Scan line image" width="37.5"
                         height="37.5">
                     <div>
-                        <h3>Scan Receipt</h3>
-                        <p>Simply snap a photo of your bill from any partner restaurant using our smart camera.</p>
+                        <h3 data-i18n="step1_title">Beleg scannen</h3>
+                        <p data-i18n="step1_desc">Mach mit unserer smarten Kamera einfach ein Foto deiner Rechnung von einem Partner-Restaurant.</p>
                     </div>
                 </div>
                 <div class="step container">
                     <img src="./assets/vectors/coins.svg" id="coins" alt="Coins image" width="37.5" height="37.5">
                     <div>
-                        <h3>Earn Points</h3>
-                        <p>Points are automatically added to your wallet after verification.</p>
+                        <h3 data-i18n="step2_title">Punkte sammeln</h3>
+                        <p data-i18n="step2_desc">Nach der Prüfung werden die Punkte automatisch deinem Guthaben gutgeschrieben.</p>
                     </div>
                 </div>
                 <div class="step container">
                     <img src="./assets/vectors/gift.svg" id="gift" alt="Gift image" width="37.5" height="37.5">
                     <div>
-                        <h3>Redeem Rewards</h3>
-                        <p>Spend your points on free meals, drinks or exclusive discounts at any location.</p>
+                        <h3 data-i18n="step3_title">Rewards einlösen</h3>
+                        <p data-i18n="step3_desc">Löse deine Punkte für Gratis-Gerichte, Getränke oder exklusive Rabatte in jedem Lokal ein.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="our-mission section">
-            <h2>Our Mission</h2>
+            <h2 data-i18n="mission_title">Unsere Mission</h2>
             <div class="quote container">
                 <img src="./assets/vectors/quote.svg" id="quote" alt="Quote image" width="50" height="50">
-                <h3>"We believe that every meal should be shared and support a community."</h3>
+                <h3 data-i18n="mission_quote">„Wir glauben, dass jede Mahlzeit geteilt werden und eine Gemeinschaft stärken sollte.“</h3>
                 <div class="avatar container s">
                     <img class="avatar img" alt="Founder Profile Picture" width="40" height="40">
                     <div>
                         <h4>Philipp Schöller</h4>
-                        <p>Founder</p>
+                        <p data-i18n="role_founder">Gründer</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="meet section">
-            <h2>Meet the Founders</h2>
+            <h2 data-i18n="meet_title">Lerne die Gründer kennen</h2>
             <div class="avatar container l">
                 <div class="persona container">
                     <div style="width:280px;height:340px;overflow:hidden;border-radius:12px;flex-shrink:0;">
@@ -131,9 +151,8 @@
         <div class="cta section">
             <div class="cta container">
                 <div class="inner cta container">
-                    <h2 class="dark-text-shadow">Ready to start <span class="dark-text-shadow highlight">earning?</span>
-                    </h2>
-                    <a class="link-button">Download Now & Become a Member</a>
+                    <h2 class="dark-text-shadow" data-i18n="cta_title">Bereit zum <span class="dark-text-shadow highlight">Sammeln?</span></h2>
+                    <a class="link-button" data-i18n="cta_button">Jetzt herunterladen & Mitglied werden</a>
                 </div>
             </div>
         </div>
@@ -145,10 +164,10 @@
         </div>
         <div class="right footer container">
             <ul>
-                <li>Privacy Policy</li>
-                <li>Terms & Conditions</li>
-                <li>Support</li>
-                <li>Contact us: <img src="./assets/images/email_business.png" alt="business@biteback.at" style="height:18px;vertical-align:middle;"></li>
+                <li data-i18n="footer_privacy">Datenschutz</li>
+                <li data-i18n="footer_terms">AGB</li>
+                <li data-i18n="footer_support">Support</li>
+                <li><span data-i18n="footer_contact">Kontakt: </span><img src="./assets/images/email_business.png" alt="business@biteback.at" style="height:18px;vertical-align:middle;"></li>
             </ul>
         </div>
     </footer>

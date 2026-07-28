@@ -551,3 +551,49 @@ nav.full-width .social-button {
     pointer-events: auto;
     position: static;
 }
+
+/* ─── Sprachumschalter (oben rechts) ─────────────────────────────────────── */
+.lang-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: .4rem;
+    padding: .35rem;
+    background-color: var(--white);
+    border-radius: 999px;
+    box-shadow: var(--shadow-dark-bottom);
+    border: var(--border-light);
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.lang-btn svg {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.08);
+    display: block;
+}
+
+.lang-btn:hover {
+    opacity: .8;
+    transform: translateY(-1px);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    background-color: hsla(0, 0%, 0%, 0.06);
+}
