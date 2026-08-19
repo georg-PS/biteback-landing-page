@@ -236,6 +236,15 @@ p {
     font-size: var(--fsize-body-lg);
 }
 
+a {
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: var(--primary-green);
+    color: white;
+}
+
 /* --- LAYOUT ELEMENTS --- */
 
 .full-width {
