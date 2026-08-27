@@ -56,9 +56,11 @@
         }
 
         h1 {
-            font-size: 1.9rem;
+            font-size: clamp(1.5rem, 7vw, 1.9rem);
             margin: 28px 0 4px;
             letter-spacing: -.01em;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .intro { color: var(--muted); margin: 0 0 6px; }
