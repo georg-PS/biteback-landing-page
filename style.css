@@ -496,7 +496,9 @@ a {
 }
 
 #app-store-download-button,
-#google-play-download-button {
+#google-play-download-button,
+#partner-appstore-button,
+#partner-googleplay-button {
     display: flex;
     padding: 1rem 1.5rem;
     justify-content: center;
@@ -507,12 +509,15 @@ a {
 }
 
 #app-store-download-button p,
-#google-play-download-button p {
+#google-play-download-button p,
+#partner-appstore-button p,
+#partner-googleplay-button p {
     font-size: 1rem;
     color: var(--white);
 }
 
-#google-play-download-button {
+#google-play-download-button,
+#partner-googleplay-button {
     background-color: var(--black);
 }
 
