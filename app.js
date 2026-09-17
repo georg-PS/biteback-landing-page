@@ -35,7 +35,7 @@ function hideNavBar() {
 window.addEventListener('scroll', hideNavBar);
 logo.addEventListener('click', expandNav);
 
-copyrightAnnotation.innerText = `© ${new Date().getFullYear()} BiteBack Inc.`;
+copyrightAnnotation.innerText = `© ${new Date().getFullYear()} BiteBack Technologies GmbH`;
 
 // ─── Mehrsprachigkeit (DE / EN) ────────────────────────────────────────────
 // Jeder übersetzbare Text im HTML trägt ein data-i18n="key". Werte dürfen HTML
@@ -64,6 +64,7 @@ const translations = {
         cta_title: 'Bereit zum <span class="dark-text-shadow highlight">Sammeln?</span>',
         cta_button: "Jetzt herunterladen & Mitglied werden",
         footer_privacy: "Datenschutz",
+        footer_imprint: "Impressum",
         footer_terms: "AGB",
         footer_support: "Support",
         footer_contact: "Kontakt:&nbsp;",
@@ -91,6 +92,7 @@ const translations = {
         cta_title: 'Ready to start <span class="dark-text-shadow highlight">earning?</span>',
         cta_button: "Download Now & Become a Member",
         footer_privacy: "Privacy Policy",
+        footer_imprint: "Imprint",
         footer_terms: "Terms & Conditions",
         footer_support: "Support",
         footer_contact: "Contact us:&nbsp;",
