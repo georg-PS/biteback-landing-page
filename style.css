@@ -501,11 +501,15 @@ a {
 #partner-googleplay-button {
     display: flex;
     padding: 1rem 1.5rem;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1.5rem;
     text-align: start;
     border-radius: var(--s-border-radius);
+    /* Einheitliche Breite, damit App-Store- und Play-Store-Button gleich groß sind. */
+    width: 16rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 #app-store-download-button p,
