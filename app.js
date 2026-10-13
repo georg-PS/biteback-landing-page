@@ -46,7 +46,7 @@ const translations = {
         hero_title: 'Essen gehen.<br>Beleg scannen.<br><span class="highlight">Belohnt werden.</span>',
         hero_desc: "Die Treue-App, die sich für dich auszahlt. Verbinde dich mit deinen Lieblingslokalen, sammle sofort Punkte und löse exklusive Rewards ein.",
         dl_appstore: "Laden im<br>App Store",
-        dl_googleplay: "Jetzt bei<br>Google Play",
+        dl_googleplay: "Laden im<br>Google Play",
         b2b: "Du bist ein Restaurant und interessiert dich dafür in unserer App angezeigt zu werden?",
         partner_desc: "Sie wollen BiteBack als Gastronom nutzen? Laden Sie <strong>BiteBack for Partners</strong> herunter.",
         hiw_title: "So funktioniert's",
