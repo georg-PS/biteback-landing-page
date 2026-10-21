@@ -120,14 +120,13 @@ langButtons.forEach((btn) => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
 });
 
-// Startsprache: gespeicherte Wahl → sonst Browsersprache → sonst Deutsch.
+// Startsprache: immer Deutsch, Englisch nur nach Klick auf „EN" (Wahl wird gemerkt).
+// Bewusst nicht nach Browsersprache: Googles Crawler und PageSpeed laufen mit englischem
+// Browser und sollen die deutschen Texte sehen (die Seite richtet sich an Gäste in Österreich).
 let initialLang = 'de';
 try {
     const stored = localStorage.getItem('biteback_lang');
-    if (stored && translations[stored]) {
-        initialLang = stored;
-    } else if ((navigator.language || '').toLowerCase().startsWith('en')) {
-        initialLang = 'en';
-    }
+    if (stored && translations[stored]) initialLang = stored;
 } catch (e) { /* ignore */ }
-setLanguage(initialLang);
+if (initialLang !== 'de') setLanguage(initialLang);
+else langButtons.forEach((btn) => btn.classList.toggle('active', btn.dataset.lang === 'de'));
