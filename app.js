@@ -1,12 +1,12 @@
 const nav = document.querySelector('nav');
-const navHeight = nav.offsetHeight;
-const navBottom = parseFloat(window.getComputedStyle(nav).getPropertyValue('bottom'));
 const logo = document.querySelector('.logo');
 const navCtaButton = document.querySelector('#nav-cta-button');
 const instagramLogo = document.querySelector('#instagram');
 const copyrightAnnotation = document.querySelector('.copyright');
 
-const hideDistance = navHeight + navBottom;
+// Erst beim ersten Scrollen messen: offsetHeight beim Laden erzwingt sonst eine vorzeitige
+// Layout-Berechnung (PageSpeed: „Erzwungener dynamischer Umbruch“). Bei Größenänderung neu messen.
+let hideDistance = null;
 let prevPos = window.scrollY;
 
 let navTimeout;
@@ -24,6 +24,9 @@ function expandNav() {
 
 function hideNavBar() {
     let currentPos = window.scrollY;
+    if (hideDistance === null) {
+        hideDistance = nav.offsetHeight + parseFloat(window.getComputedStyle(nav).getPropertyValue('bottom'));
+    }
     if (prevPos < currentPos) {
         nav.style.transform = `translateY(${hideDistance}px)`
     } else {
@@ -39,20 +42,22 @@ window.addEventListener('scroll', hideNavBar);
 const topBar = document.querySelector('.top-bar');
 let topBarOffset = 0;
 let topBarLastY = Math.max(0, window.scrollY);
+let topBarMaxOffset = null; // wie hideDistance erst beim ersten Scrollen messen
 
 function moveTopBar() {
     const y = Math.max(0, window.scrollY); // iOS-Gummiband oben ignorieren
     // Ganz aus dem Bild: Abstand oben + Höhe + etwas Platz für den Schatten
-    const maxOffset = topBar.offsetTop + topBar.offsetHeight + 8;
-    topBarOffset = Math.min(maxOffset, Math.max(0, topBarOffset + (y - topBarLastY)));
+    if (topBarMaxOffset === null) topBarMaxOffset = topBar.offsetTop + topBar.offsetHeight + 8;
+    topBarOffset = Math.min(topBarMaxOffset, Math.max(0, topBarOffset + (y - topBarLastY)));
     topBarLastY = y;
     topBar.style.transform = topBarOffset ? `translateY(${-topBarOffset}px)` : '';
 }
 
 if (topBar) {
     window.addEventListener('scroll', moveTopBar, { passive: true });
-    moveTopBar();
 }
+
+window.addEventListener('resize', () => { hideDistance = null; topBarMaxOffset = null; });
 logo.addEventListener('click', expandNav);
 
 copyrightAnnotation.innerText = `© ${new Date().getFullYear()} BiteBack Technologies GmbH`;
