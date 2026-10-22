@@ -10,6 +10,10 @@
     <link rel="canonical" href="https://biteback.at/agb.html">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <style>
+        /* Website-Schrift Inter (wie auf der Startseite) */
+        @font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 400; src: url('./assets/fonts/inter-v20-latin-regular.woff2') format('woff2'); }
+        @font-face { font-display: swap; font-family: 'Inter'; font-style: normal; font-weight: 600; src: url('./assets/fonts/inter-v20-latin-600.woff2') format('woff2'); }
+
         :root {
             --green: #009E6C;
             --ink: #1b2430;
@@ -246,7 +250,7 @@
             <address>
                 BiteBack Technologies GmbH<br>
                 Schladgasse 2, 3400 Klosterneuburg, Österreich<br>
-                E-Mail: <a href="mailto:business@biteback.at">business@biteback.at</a>
+                E-Mail: <a href="#" class="obf" data-h="bWFpbHRvOmJ1c2luZXNzQGJpdGViYWNrLmF0" aria-label="E-Mail an BiteBack schreiben"><img src="./assets/images/contact/mail-business-link.png" alt="E-Mail-Adresse von BiteBack" class="ct" style="display:inline-block;vertical-align:top;height:1.6em;width:auto;"></a>
             </address>
         </section>
 
@@ -257,6 +261,7 @@
             <span>© BiteBack Technologies GmbH</span>
         </footer>
     </div>
+    <script src="./contact.js" defer></script>
 </body>
 
 </html>
