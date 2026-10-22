@@ -962,6 +962,8 @@ details.tile .answer {
 /* Hero: Keyword-Überschrift über dem Slogan */
 .hero-eyebrow {
     display: block;
+    /* etwas Luft unter der fixierten oberen Leiste */
+    margin-top: 1.25rem;
     font-size: var(--fsize-body-lg);
     font-weight: var(--fweight-semibold);
     font-style: normal;
@@ -1041,7 +1043,7 @@ details.tile .answer {
     .hero-eyebrow {
         font-size: 1.05rem;
         /* Platz für den fixierten Sprachumschalter oben rechts */
-        margin-top: 2.5rem;
+        margin-top: 3rem;
     }
 
     .gastro-corner {
