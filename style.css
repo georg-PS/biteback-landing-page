@@ -1053,6 +1053,26 @@ details.tile .answer {
     .cta.container {
         padding: 1rem;
     }
+
+    /* Footer am Handy: BiteBack-Block oben, Links darunter in zwei Spalten */
+    footer {
+        flex-direction: column;
+        gap: 1.75rem;
+        /* Platz für das schwebende Logo unten, damit es keine Links verdeckt */
+        padding-bottom: 7rem;
+    }
+
+    footer ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1.25rem;
+        width: 100%;
+        margin: 0;
+    }
+
+    footer li {
+        min-width: 0;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
