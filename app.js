@@ -147,6 +147,9 @@ const translations = {
     },
 };
 
+// Unterseiten (z. B. gastronomen-en.js) bringen ihre englischen Texte selbst mit
+if (window.BB_I18N_EN) Object.assign(translations.en, window.BB_I18N_EN);
+
 const langButtons = document.querySelectorAll('.lang-btn');
 const i18nEls = document.querySelectorAll('[data-i18n]');
 const germanOriginal = new Map();
