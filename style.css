@@ -525,6 +525,26 @@ a {
     background-color: var(--black);
 }
 
+/* Download-Kacheln in der „Bereit zum Sammeln?"-Box: gleich groß, weiße Schrift */
+#cta-appstore-button,
+#cta-googleplay-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .75rem;
+    width: 11rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.1rem 1.25rem;
+    text-align: start;
+}
+
+#cta-appstore-button p,
+#cta-googleplay-button p {
+    color: var(--white);
+}
+
 .inner.cta.container>.link-button {
     display: block;
     text-wrap: wrap;
@@ -571,19 +591,86 @@ nav.full-width .social-button {
     position: static;
 }
 
-/* ─── Sprachumschalter (oben rechts) ─────────────────────────────────────── */
-.lang-switch {
+/* ─── Obere Leiste: Gastronomen-Link links, Sprachumschalter rechts ───────────
+   Beide Knöpfe gleich hoch und gleich gestaltet. Beim Runterscrollen fährt die
+   Leiste nach oben weg, beim Raufscrollen kommt sie zurück (app.js). */
+.top-bar {
     position: fixed;
     top: 1rem;
+    left: 1rem;
     right: 1rem;
     z-index: 1000;
     display: flex;
-    gap: .4rem;
-    padding: .35rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    pointer-events: none;
+    transition: transform 250ms ease, opacity 250ms ease;
+}
+
+.top-bar--hidden {
+    transform: translateY(calc(-100% - 1.5rem));
+    opacity: 0;
+}
+
+.top-bar > * {
+    pointer-events: auto;
+}
+
+.gastro-corner,
+.lang-switch {
+    height: 44px;
+    box-sizing: border-box;
     background-color: var(--white);
     border-radius: 999px;
     box-shadow: var(--shadow-dark-bottom);
     border: var(--border-light);
+}
+
+.gastro-corner {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    padding: 0 1.1rem;
+    color: var(--brand-green);
+    font-size: .9rem;
+    font-weight: var(--fweight-semibold);
+    white-space: nowrap;
+    transition: transform 150ms ease;
+}
+
+.gc-long {
+    white-space: pre;
+}
+
+.gc-arrow {
+    margin-left: .45rem;
+    transition: transform 150ms ease;
+}
+
+.gastro-corner:hover .gc-arrow {
+    transform: translateX(2px);
+}
+
+.gastro-corner:focus-visible {
+    outline: 2px solid var(--brand-green);
+    outline-offset: 2px;
+}
+
+/* Schmale Handys: nur „Für Gastronomen →", damit nichts umbricht */
+@media only screen and (max-width: 400px) {
+    .gc-long {
+        display: none;
+    }
+}
+
+/* ─── Sprachumschalter (oben rechts) ─────────────────────────────────────── */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: .4rem;
+    padding: 0 .35rem;
 }
 
 .lang-btn {
@@ -952,6 +1039,11 @@ details.tile .answer {
         margin-top: 2.5rem;
     }
 
+    .gastro-corner {
+        font-size: .85rem;
+        padding: 0 1rem;
+    }
+
     /* Sehr schmale Handys (320 px): Über uns und Download-Box nicht breiter als der Bildschirm */
     .meet.section,
     .cta.section {
@@ -970,7 +1062,7 @@ details.tile .answer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tile, .pill-button, details.tile summary::after { transition: none; }
+    .tile, .pill-button, details.tile summary::after, .top-bar { transition: none; }
 }
 
 /* Lange Hauptüberschrift (Gastronomen-Seite): kleiner, mit Silbentrennung */

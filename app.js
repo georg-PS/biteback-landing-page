@@ -22,13 +22,21 @@ function expandNav() {
     }
 }
 
+const topBar = document.querySelector('.top-bar');
+
 function hideNavBar() {
     let currentPos = window.scrollY;
-    if (prevPos < currentPos) {
+    const delta = currentPos - prevPos;
+    // Kleine Zuckler (< 4 px) ignorieren, damit die Leisten nicht flackern
+    if (Math.abs(delta) < 4 && currentPos > 60) return;
+    if (delta > 0) {
         nav.style.transform = `translateY(${hideDistance}px)`
     } else {
         nav.style.transform = 'translateY(0)';
     }
+    // Obere Leiste wie bei YouTube: runter scrollen blendet sie aus, rauf scrollen holt sie zurück.
+    // Ganz oben ist sie immer sichtbar.
+    if (topBar) topBar.classList.toggle('top-bar--hidden', delta > 0 && currentPos > 60);
     prevPos = currentPos;
 }
 
@@ -45,6 +53,7 @@ copyrightAnnotation.innerText = `© ${new Date().getFullYear()} BiteBack Technol
 const translations = {
     en: {
         nav_cta: "Download now",
+        gastro_corner: 'For restaurants<span class="gc-long">, click here</span><span class="gc-arrow" aria-hidden="true">→</span>',
         hero_eyebrow: "The loyalty app for restaurants in Klosterneuburg",
         hero_title: 'Eat out.<br>Scan receipt.<br><span class="highlight">Get rewarded.</span>',
         hero_desc: "Visit your favourite places, collect one Bite for every euro on your bill and swap your Bites for Backs: free dishes and free drinks. BiteBack works like a digital stamp card that is valid at all partner venues at once. Instead of money you get food and drinks back, and the app is free for you.",
