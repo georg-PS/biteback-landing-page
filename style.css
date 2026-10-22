@@ -495,10 +495,13 @@ a {
     height: auto;
 }
 
+/* Store-Buttons: überall gleich (App Store grün, Google Play schwarz, Symbol links) */
 #app-store-download-button,
 #google-play-download-button,
 #partner-appstore-button,
-#partner-googleplay-button {
+#partner-googleplay-button,
+#cta-appstore-button,
+#cta-googleplay-button {
     display: flex;
     padding: 1rem 1.5rem;
     justify-content: flex-start;
@@ -515,34 +518,17 @@ a {
 #app-store-download-button p,
 #google-play-download-button p,
 #partner-appstore-button p,
-#partner-googleplay-button p {
+#partner-googleplay-button p,
+#cta-appstore-button p,
+#cta-googleplay-button p {
     font-size: 1rem;
     color: var(--white);
 }
 
 #google-play-download-button,
-#partner-googleplay-button {
-    background-color: var(--black);
-}
-
-/* Download-Kacheln in der „Bereit zum Sammeln?"-Box: gleich groß, weiße Schrift */
-#cta-appstore-button,
+#partner-googleplay-button,
 #cta-googleplay-button {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: .75rem;
-    width: 11rem;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 1.1rem 1.25rem;
-    text-align: start;
-}
-
-#cta-appstore-button p,
-#cta-googleplay-button p {
-    color: var(--white);
+    background-color: var(--black);
 }
 
 .inner.cta.container>.link-button {

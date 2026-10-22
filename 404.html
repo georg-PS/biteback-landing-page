@@ -51,15 +51,20 @@
         h1 { font-size: clamp(1.4rem, 6vw, 1.9rem); margin: 0 0 10px; letter-spacing: -.01em; }
         .intro { color: var(--muted); margin: 0 auto 32px; max-width: 520px; }
 
-        .stores { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 28px; }
+        /* Store-Buttons wie auf biteback.at: App Store grün, Google Play schwarz, Symbol links */
+        .stores { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 28px; }
         .store {
-            display: inline-flex; align-items: center; gap: 10px;
-            width: 16rem; max-width: 100%; justify-content: center;
-            padding: 12px 18px; border-radius: 14px;
-            background: var(--primary); color: #fff; text-decoration: none; font-weight: 600;
+            display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem;
+            width: 16rem; max-width: 100%; padding: 1rem 1.5rem; border-radius: .75rem;
+            background: var(--primary); color: #fff; text-decoration: none; font-weight: 600; text-align: start;
+            text-shadow: 0px 2px 5px hsla(0, 0%, 0%, 0.25);
+            box-shadow: inset 0px 5px 5px -5px #fff, 0px 5px 5px -5px hsla(0, 0%, 0%, 0.5);
+            transition: box-shadow 200ms ease, transform 400ms ease;
         }
-        .store img { width: 26px; height: 26px; }
-        .store:hover { background: var(--green); }
+        .store.play { background: #000; }
+        .store img { width: 50px; height: 50px; flex-shrink: 0; }
+        .store span { font-size: 1rem; line-height: 1.4; }
+        .store:hover { transform: translateY(-2.5px); box-shadow: 0px 5px 5px -5px hsla(0, 0%, 0%, 0.5); }
 
         .home { display: inline-block; color: var(--green); font-weight: 600; text-decoration: none; margin-bottom: 40px; }
 
@@ -92,17 +97,17 @@
         <h1>Diese Seite gibt es nicht (mehr)</h1>
         <p class="intro">
             Vielleicht hast du einen alten Link oder QR-Code erwischt. Bites sammelst du ganz einfach
-            in der BiteBack-App – kostenlos für iPhone und Android.
+            in der BiteBack-App, kostenlos für iPhone und Android.
         </p>
 
         <div class="stores">
             <a class="store" href="https://apps.apple.com/at/app/biteback/id6777159125" target="_blank" rel="noopener">
-                <img src="/assets/vectors/app_store.svg" alt="" width="26" height="26">
-                Laden im App Store
+                <img src="/assets/vectors/app_store.svg" alt="" width="50" height="50">
+                <span>Laden im<br>App Store</span>
             </a>
-            <a class="store" href="https://play.google.com/store/apps/details?id=at.biteback.app" target="_blank" rel="noopener">
-                <img src="/assets/vectors/google_play.svg" alt="" width="26" height="26">
-                Laden in Google Play
+            <a class="store play" href="https://play.google.com/store/apps/details?id=at.biteback.app" target="_blank" rel="noopener">
+                <img src="/assets/vectors/google_play.svg" alt="" width="50" height="50">
+                <span>Laden in<br>Google Play</span>
             </a>
         </div>
 
