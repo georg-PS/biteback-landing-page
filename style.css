@@ -948,6 +948,24 @@ details.tile .answer {
 
     .hero-eyebrow {
         font-size: 1.05rem;
+        /* Platz für den fixierten Sprachumschalter oben rechts */
+        margin-top: 2.5rem;
+    }
+
+    /* Sehr schmale Handys (320 px): Über uns und Download-Box nicht breiter als der Bildschirm */
+    .meet.section,
+    .cta.section {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .persona.container > div:first-child {
+        max-width: 100%;
+    }
+
+    .cta.container {
+        padding: 1rem;
     }
 }
 
