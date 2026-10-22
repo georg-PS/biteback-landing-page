@@ -372,7 +372,8 @@ a {
     align-items: center;
     padding: var(--padding-m);
     border-radius: var(--l-border-radius);
-    background-image: url(./assets/images/cta-background.webp);
+    /* 1600 px reicht für die breiteste Box; am Handy lädt die 800-px-Version (siehe unten) */
+    background-image: url(./assets/images/cta-background-1600.webp);
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -1052,6 +1053,7 @@ details.tile .answer {
 
     .cta.container {
         padding: 1rem;
+        background-image: url(./assets/images/cta-background-800.webp);
     }
 
     /* Footer am Handy: BiteBack-Block oben, Links darunter in zwei Spalten */
