@@ -22,25 +22,37 @@ function expandNav() {
     }
 }
 
-const topBar = document.querySelector('.top-bar');
-
 function hideNavBar() {
     let currentPos = window.scrollY;
-    const delta = currentPos - prevPos;
-    // Kleine Zuckler (< 4 px) ignorieren, damit die Leisten nicht flackern
-    if (Math.abs(delta) < 4 && currentPos > 60) return;
-    if (delta > 0) {
+    if (prevPos < currentPos) {
         nav.style.transform = `translateY(${hideDistance}px)`
     } else {
         nav.style.transform = 'translateY(0)';
     }
-    // Obere Leiste wie bei YouTube: runter scrollen blendet sie aus, rauf scrollen holt sie zurück.
-    // Ganz oben ist sie immer sichtbar.
-    if (topBar) topBar.classList.toggle('top-bar--hidden', delta > 0 && currentPos > 60);
     prevPos = currentPos;
 }
 
 window.addEventListener('scroll', hideNavBar);
+
+// Obere Leiste wie bei YouTube: sie wandert 1:1 mit dem Scrollen. Runter scrollen schiebt sie
+// Pixel für Pixel aus dem Bild, rauf scrollen holt sie im gleichen Tempo zurück.
+const topBar = document.querySelector('.top-bar');
+let topBarOffset = 0;
+let topBarLastY = Math.max(0, window.scrollY);
+
+function moveTopBar() {
+    const y = Math.max(0, window.scrollY); // iOS-Gummiband oben ignorieren
+    // Ganz aus dem Bild: Abstand oben + Höhe + etwas Platz für den Schatten
+    const maxOffset = topBar.offsetTop + topBar.offsetHeight + 8;
+    topBarOffset = Math.min(maxOffset, Math.max(0, topBarOffset + (y - topBarLastY)));
+    topBarLastY = y;
+    topBar.style.transform = topBarOffset ? `translateY(${-topBarOffset}px)` : '';
+}
+
+if (topBar) {
+    window.addEventListener('scroll', moveTopBar, { passive: true });
+    moveTopBar();
+}
 logo.addEventListener('click', expandNav);
 
 copyrightAnnotation.innerText = `© ${new Date().getFullYear()} BiteBack Technologies GmbH`;

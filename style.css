@@ -592,8 +592,8 @@ nav.full-width .social-button {
 }
 
 /* ─── Obere Leiste: Gastronomen-Link links, Sprachumschalter rechts ───────────
-   Beide Knöpfe gleich hoch und gleich gestaltet. Beim Runterscrollen fährt die
-   Leiste nach oben weg, beim Raufscrollen kommt sie zurück (app.js). */
+   Beide Knöpfe gleich hoch und gleich gestaltet. Die Leiste wandert 1:1 mit dem
+   Scrollen aus dem Bild und wieder herein, wie bei YouTube (app.js). */
 .top-bar {
     position: fixed;
     top: 1rem;
@@ -605,12 +605,7 @@ nav.full-width .social-button {
     align-items: center;
     gap: .5rem;
     pointer-events: none;
-    transition: transform 250ms ease, opacity 250ms ease;
-}
-
-.top-bar--hidden {
-    transform: translateY(calc(-100% - 1.5rem));
-    opacity: 0;
+    will-change: transform;
 }
 
 .top-bar > * {
@@ -988,6 +983,16 @@ details.tile .answer {
     transition: transform 300ms ease, box-shadow 200ms ease;
 }
 
+/* Zwei Pill-Buttons nebeneinander: gleich breit, Text mittig */
+.hero-pills .pill-button {
+    width: 17rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .pill-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-dark-bottom);
@@ -1046,7 +1051,8 @@ details.tile .answer {
 
     /* Sehr schmale Handys (320 px): Über uns und Download-Box nicht breiter als der Bildschirm */
     .meet.section,
-    .cta.section {
+    .cta.section,
+    .hero.section {
         max-width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -1062,7 +1068,7 @@ details.tile .answer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .tile, .pill-button, details.tile summary::after, .top-bar { transition: none; }
+    .tile, .pill-button, details.tile summary::after { transition: none; }
 }
 
 /* Lange Hauptüberschrift (Gastronomen-Seite): kleiner, mit Silbentrennung */
